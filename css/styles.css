@@ -53,81 +53,308 @@ height: auto;}
 --icon-fill-color: #f4f4fd;
 }
 
-/*--Задаем контейнер для центровки и ограничения ширины контента--*/
+
+/*----------------------HEADER-----------------------*/
+
+/*-----------------МОБИЛЬНАЯ ВЕРСИЯ-------------------*/
+
+
+/*--Описываем подчеркивание header--*/
 .header {
-border-bottom: 1px solid #E7E9FC;
-box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
-0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08); 
+  border-bottom: 1px solid #E7E9FC;
+  box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
 }
 
+
 /*--Контейнер, в который помещается контент секций--*/
-.container
-{width: 1158px;
-margin: 0 auto;
-padding: 0 15px;}
+.container {
+  max-width: 428px;
+  padding-left: 16px;
+  padding-right: 16px;
+  margin-left: auto;
+  margin-right: auto;
+}
 
-/*--Описываем контейнер главной навигации--*/
-.main-nav {
-display: flex; /*--Выстраиваем элементы по горизонтали--*/
-align-items: center;}
 
-/*--Делаем логотип и список навигации flex-контейнером--*/
-.nav {
-display: flex;
-align-items: center;}/*--Центруем элементы вдоль горизонтальной оси--*/
+/*--Скрываем ненужные меню для мобайла--*/
+.nav-ul, .cont 
+{ display: none; }  
 
 
 /*--Данные верхнего логотипа--*/
-.logo
-{color: var(--logo-check-color);
-font-family: 'Raleway', sans-serif;
-font-weight: 800;
-font-size: 18px;
-line-height: 1.17;
-letter-spacing: 0.03em;
-text-transform: uppercase;}
+.logo {
+    color: var(--logo-check-color);
+    font-family: 'Raleway', sans-serif;
+    font-weight: 800;
+    font-size: 18px;
+    line-height: 1.17;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+}
 
 /*--Дополнительные данные верхнего логотипа--*/
-.head
-{padding: 24px 0;
-margin-right: 76px;}/*--Задаем отступ между логотипом и nav-ul--*/
+.head {
+  padding: 24px 0;
+  }
 
+/*--Задаем отступ между логотипом и nav-ul--*/
 
 /*--Описываем слово Studio--*/
 .header-word {
-color: var(--header-word-color);
-font-family: 'Raleway' sans-serif;;
-font-weight: 800;
-font-size: 18px;
-line-height: 1.17;
-letter-spacing: 0.03em;
-text-transform: uppercase;}
+    color: var(--header-word-color);
+    font-family: 'Raleway' sans-serif;
+    font-weight: 800;
+    font-size: 18px;
+    line-height: 1.17;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+}
+
+/*--Ставим элементы навигации в строку--*/
+.main-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    }
+
+
+/*--Кнопка открытия мобильного меню - бургер--*/
+.mobile-menu-open-btn
+{ border: none;
+  background-color: transparent;
+  padding: 0;
+  line-height: 0;
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+/*--Мобильное меню--*/
+.mobile-menu
+{
+ position: fixed;
+ width: 100%;
+ height: 100%;
+ z-index: 1000;
+ top: 0;
+ left: 0;
+ background-color: #fff;
+ opacity: 1;
+ visibility: hidden;
+ pointer-events: none;
+  /*--transition: opacity, visibility--*/   
+}
+
+
+/*--Открытие мобильного меню--*/
+.mobile-menu.is-open
+{ opacity: 1;
+  visibility: visible;
+  pointer-events: auto; }
+
+
+/*--Контейнер мобильного меню--*/
+.mobile-menu-container
+{
+ position: relative;
+ padding-top: 80px;
+ padding-left: 40px;
+ padding-right: 35px;
+ padding-bottom: 40px; 
+}
+
+
+/*--Кнопка закрытия мобилього меню--*/
+.mobile-menu-close-btn
+{
+ position: absolute;
+ top: 24px;
+ right: 23px;
+ display: flex;
+ align-items: center;
+ justify-content: center; 
+ width: 24px; 
+ height: 24px; 
+ border: 1px solid #D9D9D9;
+ border-radius:50%;
+ background-color: #ffff; 
+ padding: 0;
+}
+
+
+/*--Описываем иконку закрытия мобильного меню--*/
+.icon-mobile-menu-close 
+{ fill: #2e2f42; }
+
+
+/*--Мобильное меню навигации--*/
+.mobile-menu-nav
+{display: flex;
+ flex-direction: column;   
+ padding:0;
+ gap: 40px;
+ margin-bottom: 284px; }
+
+
+/*--Описываем линки навигации мобильного меню--*/
+.mobile-menu-link
+{font-weight: 700;
+ font-size: 36px;
+ line-height: 1.11;
+ letter-spacing: 0.02em;
+  text-decoration: none;    }
+
+
+/*--Задаем цвет главной ссылке мобильного меню--*/
+ .main {
+   color: #404bbf;
+ }
+
+
+/*--Задаем цвет другим ссылкам мобильного меню--*/
+.next
+{ color: #2E2F42; }
+
+
+ /*--Описываем поведение ссылок при фокусе--*/
+ .mobile-menu-link:focus
+ { color: #404bbf; }
+
+
+/*--Мобильное меню контакты--*/
+.mobile-menu-cont
+{display: flex;
+ flex-direction: column;   
+ gap: 40px;
+ margin-bottom: 48px;}
+
+
+ /*--Задаем цвет ссылке телефона--*/
+.tel-number
+{ color: #4D5AE5; }
+
+
+/*--Параметры текста email--*/
+.mobile-menu-email
+{font-weight: 500;
+ font-size: 20px;
+ line-height: 1.2;
+ letter-spacing: 0.02em;
+ color: #434455;
+ text-decoration: none;
+}
+
+
+/*--Список соцсетей мобильного меню--*/
+.mobile-menu-social
+{display: flex;
+ gap: 56px;   }
+
+
+/*--Ячейка каждой иконки линка соцсети--*/
+.social-link
+{width: 40px;
+height: 40px;}
+
+
+/*--Описание класса ссылки соцсетей мобильного меню--*/
+.social-link-a-mobile {
+     display: flex;
+     width: 100%;
+     height: 100%;
+     background-color: #4D5AE5;
+     border-radius: 50%;
+     align-items: center;
+     justify-content: center;
+     color: #FFFFFF;
+     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+
+ /*--Меняем цвет при наведении на ссылку соцсети--*/
+.social-link-a-mobile:hover,
+ .social-link-a-mobile:focus {
+     background-color: #404bbf;
+    }
+
+ /*--Класс для заливки иконок соцсетей футера--*/
+.icon-sl-mobile 
+{ fill: #f4f4fd; }
+
+
+
+/*-----------ПЛАНШЕТНАЯ ВЕРСИЯ-----------*/
+
+@media screen and (min-width:768px)
+{
+
+/*--Задаем ширину контейнера--*/
+.container
+{max-width: 768px;}
+
+
+/*--Скрываем кнопку вызова мобильного меню--*/    
+.mobile-menu-open-btn
+{display: none;}
+
+
+/*--Задаем отступ между логотипом и nav-ul--*/
+.head 
+{ margin-right: 120px; }
+
+
+/*--Включаем меню навигации - делаем видимым--*/
+.nav 
+{display: flex;
+align-items: center; }
+
+
+/*--Включаем главную навигацию--*/
+.main-nav 
+{ display: flex; } /*--Выстраиваем элементы по горизонтали--*/
+
 
 /*--Делаем список навигации flex-контейнером--*/
 .nav-ul 
-{display: flex;}
+{display: flex;
+align-items: center;
+gap: 40px;
+}     
+    
 
-/*--Задаем правый отступ всем item nav, кроме крайних--*/
- .nav-ul .item:not(:last-child) 
- {margin-right: 40px; }
+/*--Прижимаем секцию почты и телефона к правому краю--*/
+.cont
+{display: flex;
+ font-style: normal; /*--сбрасываем стиль italic--*/
+margin-left: auto; }
+
+
+/*--Делаем список контактов flex-контейнером--*/
+.cont-ul {
+display: flex;
+flex-direction: column;
+gap: 12px;}
+
 
 /*--Данные навигационных ссылок--*/
 .nav-link {
-    color: var(--nav-link-color);
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 1.5;
-    letter-spacing: 0.02em;
-    display: block;
-    padding: 24px 0;
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+color: var(--nav-link-color);
+font-weight: 500;
+font-size: 16px;
+line-height: 1.5;
+letter-spacing: 0.02em;
+display: block;
+padding-top: 24px;
+padding-bottom: 24px;
+transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 
 /*--Меняем цвет ссылок при наведении--*/
 .nav-link:hover,
 .nav-link:focus
-{color: var(--link-active-color);
- }
+{color: var(--link-active-color); }
+
 
 /*--Задаем ссылке страницы Studio - relative--*/
 .current-page-main
@@ -138,7 +365,6 @@ color: var(--link-active-color);}
 /*--Делаем подчеркивание текущей страницы при помощи псевдоэлемента after--*/
 .current-page-main::after
 {content: '';
- /*--display: block;--*/   
  width: 48px;
  height: 4px;
  left: 0;
@@ -149,32 +375,29 @@ color: var(--link-active-color);}
  position: absolute;
  }
 
-/*--Прижимаем секцию почты и телефона к правому краю--*/
-.cont
-{font-style: normal; /*--сбрасываем стиль italic--*/
-margin-left: auto;}
-
-/*--Делаем список контактов flex-контейнером--*/
-.cont-ul {
-display: flex;
-/*--gap: 40px;--*/}
-
-/*--Задаем правый отступ всем item cont, кроме крайних--*/
-.cont-ul .item:not(:last-child) 
-{margin-right: 40px;}
 
 /*--Данные ссылок контактов--*/
 .cont-link {
 color: var(--main-text-color);
 font-weight: 400;
-font-size: 16px;
-line-height: 1.5;
-letter-spacing: 0.02em;
+font-size: 12px;
+line-height: 1.17;
+letter-spacing: 0.04em;
 text-decoration: none;
 display: block;
-padding: 24px 0;
 transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+
+/*--Дополнительный класс для почты--*/
+.email
+{padding-top: 16px;}
+
+
+/*--Дополнительный класс для телефона--*/
+.tel
+{padding-bottom: 16px}
+
 
 /*--Меняем цвет ссылок при наведении--*/
 .cont-link:hover,
@@ -182,33 +405,101 @@ transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 color: var(--link-active-color);
 }
 
-/*--Данные секции HERO--*/
+}
+
+/*-----------------Описываем ДЕСКТОП---------------------*/
+
+@media screen and (min-width:1158px) {
+
+.container
+{max-width: 1158px;
+ padding-left: 15px;
+ padding-right: 15px;}
+
+
+/*--Задаем отступ между логотипом и nav-ul--*/
+.head
+{margin-right: 76px;} /*--Задаем отступ между логотипом и nav-ul--*/
+
+
+/*--Делаем список навигации flex-контейнером--*/
+.nav-ul {
+    display: flex;
+    align-items: center;
+    }
+
+
+/*--Прижимаем секцию почты и телефона к правому краю--*/
+.cont
+{ margin-left: auto;}
+
+/*--Делаем список контактов flex-контейнером--*/
+.cont-ul 
+{ flex-direction: row;
+  gap:40px; }
+
+
+/*--Убираем паддинги--*/
+.tel
+{padding-bottom: 0;}
+
+.email 
+{ padding-top: 0; }
+
+/*--Данные ссылок контактов--*/
+.cont-link {
+font-size: 16px;
+line-height: 1.5;
+letter-spacing: 0.02em;
+display: block;
+padding: 24px 0;
+}
+
+}
+   
+/*----------------------HERO--------------------------*/
+
+/*-------------МОБИЛЬНАЯ ВЕРСИЯ------------------*/
+
 
 /*--Задаем параметры секции hero--*/
 .hero {
 background-color: var(--hero-background-color);
 margin-top: 0;
-max-width: 1440px;
-padding: 188px 0;
+max-width: 428px;
+padding: 112px 0;
 margin-left: auto;
 margin-right: auto;
 background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), 
-url(../images/hero/background-hero.jpg);
+url(../images/hero/Hero_mobile_1x.jpg);
 background-size: cover;
 background-repeat: no-repeat;
 background-position: center;}
+
+
+/*--Описываем медиаправило для фонового изображения HERO-mobile--*/
+@media screen and (min-device-pixel-ratio:2) and (max-width:767px),
+screen and (min-resolution: 192dpi) and (max-width: 767px),
+screen and (min-resolution: 2ppx) and (max-width: 767px)
+{
+.hero
+ {background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+    url(../images/hero/Hero_mobile_2x.jpg) }
+}
+
 
 /*--Задаем параметры заголовка секции hero--*/
 .hero-title {
 color: var(--hero-title-color);
 font-weight: 700;
-font-size: 56px;
-line-height: 1.07;
+font-size: 36px;
+line-height: 1.11;
 text-align: center;
 letter-spacing: 0.02em;
-max-width: 496px;
+max-width: 320px;
 margin-left: auto;
 margin-right: auto;}
+
 
 /*---Кнопка Order Service---*/
 .main-btn {
@@ -226,14 +517,15 @@ min-width: 169px;
 height: 56px;
 margin-left: auto;
 margin-right: auto;
-margin-top: 48px;
+margin-top: 72px;
 padding: 16px 32px 16px 32px;
 border-radius: 4px;
 box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/*--Меняем цвет кнопок при навдении--*/
+
+/*--Меняем цвет кнопок при навeдении--*/
 .main-btn:hover,
 .main-btn:focus {
 color: var(--main-btn-color);
@@ -242,8 +534,98 @@ cursor: pointer;
 box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
 
-/*--Задаем внутренние отступы секции Adv--*/
-.section-adv {padding: 120px 0;}
+
+
+/*----------------ПЛАНШЕТНАЯ ВЕРСИЯ------------*/
+
+/*----Пишем правило для планшетов--*/
+@media screen and (min-width:768px)
+{
+
+/*--Задаем параметры секции hero--*/
+.hero {
+background-color: var(--hero-background-color);
+margin-top: 0;
+max-width: 768px;
+padding: 112px 0;
+margin-left: auto;
+margin-right: auto;
+background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+            url(../images/hero/Hero_tablet_1x.jpg);
+background-size: cover;
+background-repeat: no-repeat;
+background-position: center;
+}
+
+
+/*--Описываем медиаправило для фонового изображения HERO-tablet--*/
+@media screen and (min-device-pixel-ratio:2) and (max-width:1200px),
+screen and (min-resolution: 192dpi) and (max-width: 1200px),
+screen and (min-resolution: 2ppx) and (max-width: 1200px) {
+.hero {
+background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+            url(../images/hero/Hero_tablet_2x.jpg)
+}
+}
+
+/*--Задаем параметры заголовка секции hero--*/
+.hero-title {
+color: var(--hero-title-color);
+font-weight: 700;
+font-size: 56px;
+line-height: 1.07;
+text-align: center;
+letter-spacing: 0.02em;
+max-width: 496px;
+margin-left: auto;
+margin-right: auto;
+}
+    
+}
+
+/*---------------------ДЕСКТОПНАЯ ВЕРСИЯ---------------------*/
+
+/*--Пишем правило для десктопов--*/
+@media screen and (min-width:1158px)
+{
+ 
+/*--Задаем параметры секции hero--*/
+.hero {
+background-color: var(--hero-background-color);
+margin-top: 0;
+max-width: 1440px;
+padding: 188px 0;
+margin-left: auto;
+margin-right: auto;
+background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+            url(../images/hero/Hero_desktop_1x.jpg);
+background-size: cover;
+background-repeat: no-repeat;
+background-position: center;
+}
+
+
+/*--Описываем медиаправило для фонового изображения HERO-desktop--*/
+@media screen and (min-device-pixel-ratio:2) and (min-width:1200px),
+screen and (min-resolution: 192dpi) and (min-width: 1200px),
+screen and (min-resolution: 2ppx) and (min-width: 1200px) {
+.hero {
+background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+              url(../images/hero/Hero_desktop_2x.jpg);
+      }
+}
+}
+
+
+/*-------------------СЕКЦИЯ--OUR ADVANTAGES------------------------*/
+
+/*----------------------МОБИЛЬНАЯ ВЕРСИЯ-----------------------*/
+
+
+/*--Задаем внутренние отступы секции--*/
+.section-adv
+{ padding: 96px 0; }
+
 
 /*--Данные заголовка секции--*/
 .section-title {
@@ -269,25 +651,97 @@ padding: 0;
 white-space: no-wrap;
 clip-path: inset(100%);
 clip: rect(0 0 0 0);
-overflow: hidden;    
+overflow: hidden; 
 }
+
+/*--Делаем список flex-элементом, чтобы список расположить горизонтально--*/
+.section-ul
+{display: flex;
+ flex-direction: column;   
+gap: 72px;}
+
+
+/*--Определяем ширину пункта списка--*/
+.section-item 
+{ flex-basis: calc((100% - 3*24px)/4);  }
+
+
+/*--Данные подзаголовков--*/
+.section-subtitle 
+{color: var(--section-main-text-color);
+ font-weight: 700;
+ font-size: 36px;
+ line-height: 1.11;
+ letter-spacing: 0.02em;
+ text-align: center;
+ margin-bottom: 8px;
+}
+
+/*--Данные текста секции--*/
+.section-text {
+color: var(--main-text-color);
+font-weight: 500;
+font-size: 16px;
+line-height: 1.5;
+letter-spacing: 0.02em;
+}
+
+/*--Скрываем ненужные иконки в мобильной версии--*/
+.icon-adv {
+    display: none;
+}
+
+/*-----------------ПЛАНШЕТНАЯ ВЕРСИЯ----------------------*/
+
+/*--Медиаправило планшетной версии--*/
+@media screen and (min-width: 768px) {
+
+    
+/*--Делаем список flex-элементом, чтобы список 
+    расположить в несколько рядов--*/
+.section-ul
+{display: flex;
+flex-direction: row;
+ flex-wrap: wrap;
+ column-gap: 24px;
+ row-gap: 72px;
+ padding-left: 0;
+ padding-right: 0; 
+ }
+
+
+/*--Определяем ширину пункта списка--*/
+.section-item 
+{ flex-basis: calc((100% - 1*24px)/2);  }
+
+
+/*--Прижимаем подзаголовки к левому краю--*/
+.section-subtitle
+{ text-align: start; }
+
+}
+
+
+/*----------------ДЕСКТОПНАЯ ВЕРСИЯ---------------*/
+
+@media screen and (min-width: 1158px) {
+
+    
+/*--Задаем внутренние отступы секции Adv--*/
+.section-adv 
+{padding: 120px 0;}
+
 
 /*--Делаем список flex-элементом, чтобы список расположить горизонтально--*/
 .section-ul
 {display: flex;
 gap: 24px;}
 
+
 /*--Определяем ширину пункта списка--*/
 .section-item {
-    flex-basis: calc((100% - 3*24px)/4);
-    /*--width: calc((100% - 3*24px)/4)--*/
-}
+  flex-basis: calc((100% - 3*24px)/4);  }
 
-/*--Определяем ширину списка img--*/
-.section-item-img {
-    flex-basis: calc((100% - 3*16px)/3);
-    /*--width: calc((100% - 3*16px)/3)--*/
-}
 
 /*--Описываем иконки секции Advantages--*/
 .icon-adv
@@ -301,49 +755,115 @@ margin-bottom: 8px;
 border-radius: 4px;
 }
 
+
 /*--Данные подзаголовков--*/
-.section-subtitle 
-{color: var(--section-main-text-color);
- font-weight: 500;
- font-size: 20px;
- line-height: 1.2;
- letter-spacing: 0.02em;
- margin-bottom: 8px;}
+.section-subtitle {
+    /*--color: var(--section-main-text-color);--*/
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+    /*--margin-bottom: 8px;--*/
+}
+
 
 /*--Данные текста секции--*/
 .section-text {
-    color: var(--main-text-color);
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 1.5;
-    letter-spacing: 0.02em;
+font-weight: 400;
+font-size: 16px;
+line-height: 1.5;
+letter-spacing: 0.02em;
 }
+
+}
+
+/*---------------СЕКЦИЯ WORK EXAMPLES---------------*/
+
+/*------------------МОБИЛЬНАЯ ВЕРСИЯ-------------------*/
+
+/*--Скрываем секцию для мобильной версии--*/    
+.section-exmp
+{ display: none; }
+
+
+/*---------ПЛАНШЕТНАЯ ВЕРСИЯ-----------*/
+
+/*--Оставляем секцию section-exmp скрытой--*/
+
+
+/*---------ДЕСКТОПНАЯ ВЕРСИЯ-----------*/
+
+@media screen and (min-width: 1158px) {
 
 /*--Задаем внутренний отступ секции Work Exmaples--*/
 .section-exmp 
-{padding-bottom: 120px;}
+{ display: block;
+  padding-bottom: 120px;}
+
+/*--Определяем ширину списка img--*/
+.section-item-img 
+{ flex-basis: calc((100% - 3*16px)/3);   }
+
+}
+
+/*------------------СЕКЦИЯ OUR TEAM----------------*/
+
+/*------------МОБИЛЬНАЯ ВЕРСИЯ-------------*/
+
 
 /*--Данные секции Our Team, у которой отличается фон--*/
 .section-team
-{background-color: var(--section-team-background-color);
-padding: 120px 0;} /*--Задаем внутренние паддинги--*/
+{
+background-color: var(--section-team-background-color);
+padding: 96px 0;
+}
+
+
+/*--Задаем внутренние отступы--*/
+.section-team-content
+{
+ padding-left: 82px;
+ padding-right: 82px;
+}
+
+
+/*--Задаем внутренние отступы и располагаем вертикально--*/
+.section-ul-team
+{
+ display: flex;
+ flex-direction: column;
+ row-gap: 72px;
+ }
 
 .section-team-card {
-    background-color: var(--main-background-color);
-    text-align: center;
-    flex-basis: calc((100% - 3*24px)/4);
-    /*--width: calc((100% - 3*24px)/4)--*/
-    border-radius: 0px 0px 4px 4px;
-    box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
-    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+background-color: var(--main-background-color);
+text-align: center;
+flex-basis: calc((100%)/1);
+border-radius: 0px 0px 4px 4px;
+box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+  0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
+
 
 /*--Создание контейнера - имя, должность членов команды--*/
 .name-job
-{padding: 32px 0; } /*--внутренние отступы контейнера--*/
+{ /*--max-width: 232px;--*/    
+  padding: 32px 0;
+  } /*--внутренние отступы контейнера--*/
+
+
+/*--Данные подзаголовков--*/
+.section-subtitle-team {
+font-weight: 500;
+font-size: 20px;
+line-height: 1.2;
+letter-spacing: 0.02em;
+/*--margin-bottom: 8px;--*/
+}
+
 
 /*--Задание параметров ФИ сотрудника--*/
-.name-job .section-subtitle
+.name-job .section-subtitle-team
 {text-align: center;
  margin-bottom: 8px;}
 
@@ -364,6 +884,7 @@ justify-content: center;}
 {width: 40px;
 height: 40px;}
 
+
 /*--Описание класса ссылки соцсетей--*/
 .social-link-a
 {
@@ -378,36 +899,115 @@ color: #FFFFFF;
 transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+
+/*--Класс для заливки иконок соцсетей--*/
+.icon-sl {
+    fill: var(--icon-fill-color);
+}
+
 /*--Меняем цвет при наведении --*/
 .social-link-a:hover,
 .social-link-a:focus {
 background-color: #404bbf;
 }
 
-/*--Класс для заливки иконок соцсетей--*/
-.icon-sl {
-fill: var(--icon-fill-color);}
+
+/*----------ПЛАНШЕТНАЯ ВЕРСИЯ-------------*/
+
+@media screen and (min-width: 768px)
+
+{
+
+/*--Задаем внутренние паддинги--*/    
+.section-team-content {
+  padding-left: 108px;
+  padding-right: 108px;
+}
+
+
+/*--Задаем внутренние отступы и располагаем вертикально--*/
+.section-ul-team {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    column-gap: 24px;
+    row-gap: 64px;   }
+
+
+.section-team-card {
+flex-basis: calc((100% - 1*24px)/2);}
+
+}
+
+/*---------------ДЕСКТОПНАЯ ВЕРСИЯ------------------*/
+
+
+@media screen and (min-width: 1158px)
+{
+   
+/*--Данные секции Our Team, у которой отличается фон--*/
+.section-team
+{ padding: 120px 0;} /*--Задаем внутренние паддинги--*/
+
+
+/*--Задаем паддинги--*/
+.section-team-content
+{ padding-left: 16px;
+  padding-right: 16px;
+}
+
+
+.section-team-card {
+    flex-basis: calc((100% - 3*24px)/4);
+  }
+
+}
+
+
+/*-------------------СЕКЦИЯ CUSTOMERS-----------------*/
+
+/*---------------МОБИЛЬНАЯ ВЕРСИЯ---------------*/
+
+/*--@media screen and (max-width: 767px)
+{
 
 /*--Задаем внутренние паддинги секции закачиков--*/
 .section-customers
-{padding: 120px 0;}
+{padding: 96px 0;}
 
-/*--Описание секции Заказчика--*/
-.section-customers-ul
-{display: flex;
- gap: 24px;}
 
 /*--Описание контейнера логотипов заказчиков--*/
 .logo-company
 {margin-bottom:72px;}
 
+
+/*--Задаем паддинги--*/
+.section-customers-content
+{padding-left: 16px;
+ padding-right: 16px;
+}
+
+/*--*/
+.section-customers-ul {
+display: flex;
+flex-direction: row;
+align-items: center;
+flex-wrap: wrap;
+column-gap: 16px;
+row-gap: 72px;
+}
+
+
 /*--Описываем ссылку на иконку Заказчика--*/
 .customer-link
 {
- width: calc((100% - 120px)/6);
- width: 168px; 
+ width: calc((100% - 16px)/2);
+ width: 190px; 
  height: 88px;
  background-color: #FFFFFF;}
+
+
 
 /*--Описываем ссылку логотипа компаний--*/
 .customer-link-a
@@ -424,168 +1024,135 @@ transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
 color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+
+/*--Меняем цвет рамки при наведении--*/
 .customer-link-a:hover,
 .customer-link-a:focus
-{border-color: #404bbf;
-color: #404bbf;}
+{ border-color: #404bbf; }
+
+
+/*--Меняем цвет иконки при наведении на ссылку--*/
+.customer-link-a:hover>.icon-customer,
+.customer-link-a:focus>.icon-customer 
+{ fill: #404bbf; }
+
 
 /*--Класс для заливки иконок логотипов компаний--*/
-.icon-customer 
-{fill: currentColor;}
-
-/*--Описываем ссылку текущей страницы Портфолио--*/
-.current-page-port
-{position: relative;
-color: var(--link-active-color);}
-
-/*--Делаем подчеркивание страницы Портфолио псевдоэлементом--*/
-.current-page-port::after
-{content: '';
- /*--display: block;--*/ 
- width: 66px;
- height: 4px;
- border-radius: 2px;
- background-color: #404BBF;
- margin: auto;
- position: absolute;
- left: 0;
- bottom: -1px;
+.icon-customer {
+fill: #8E8F99;
 }
 
-/*--Задание паддингов для секции Портфолио--*/
-.section-port {
-padding-top: 96px;
-padding-bottom: 120px;}
 
-/*--Делаем список кнопок горизонтальным flex-элементом--*/
-.section-ul-button {
-display: flex;
-gap: 24px;
-margin-bottom: 72px;
-justify-content: center;}
+/*----------------ПЛАНШЕТНАЯ ВЕРСИЯ------------------*/
 
-/*---Кнопки Портфолио---*/
-.btn {
-color: var(--btn-color);
-background-color: #F4F4FD;
-font-family: 'Roboto', sans-serif;
-font-weight: 500;
-font-size: 16px;
-line-height: 1.5;
-letter-spacing: 0.04em;
-border: 1px solid var(--border-btn-color);
-border-radius: 4px;
-cursor: pointer;
-padding: 12px 24px 12px 24px;
-display: block;
-transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);}
-
-/*--Меняем цвет кнопок Портфолио при наведении--*/
-.btn:hover,
-.btn:focus {
-color: var(--main-btn-color);
-background-color: #404BBF;
-border: 1px solid transparent;
-box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1),
-0px 2px 1px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12) ;
+@media screen and (min-width: 768px) 
+{
+     
+/*--Задаем паддинги--*/
+.section-customers-content {
+  padding-left: 108px;
+  padding-right: 108px;
 }
 
-/*--Делаем список flex-элементом, чтобы список расположить горизонтально
-    в несколько рядов--*/
-.section-ul-card {
-display: flex;
-flex-wrap: wrap;
-column-gap: 24px;
-row-gap: 48px;
-padding-left: 0;
-padding-right: 0;
+/*----*/
+.section-customers-ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    column-gap: 24px;
+    row-gap: 72px;
 }
 
-/*--Описываем каждый элемент списка--*/
-.section-item-card {
-flex-basis: calc((100% - 2*24px)/3);
+
+/*--Описываем ссылку на иконку Заказчика--*/
+.customer-link
+{
+ width: calc((100% - 2*24px)/3);
+ width: 168px; 
+ height: 88px;
+ background-color: #FFFFFF;}
+
 }
 
-/*--Создание контейнера - описание карточки портфолио--*/
-.img-title {
-padding: 32px 16px; /*--внутренние отступы контейнера--*/
-border: 1px solid #e7e9fc;
-border-top: none;}
+/*------------ДЕСКТОПНАЯ ВЕРСИЯ СЕКЦИИ CUSTOMERS-------------*/
 
-/*--Задание отступа подзаголовку img Portfolio--*/
-.img-title .section-subtitle
-{margin-bottom: 8px;}
+@media screen and (min-width: 1158px)
+{
+    
 
-/*--Делаем ссылку блочным элементом--*/
-.pf-link
-{display: block;
- transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+/*--Задаем внутренние паддинги секции закачиков--*/
+.section-customers
+{padding: 120px 0;}
+
+
+/*--Задаем паддинги--*/
+.section-customers-content {
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
-/*--Эффект тени при наведении на карточку Портфолио--*/
-.pf-link:hover,
-.pf-link:focus
-{box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
-        0px 1px 1px rgba(46, 47, 66, 0.16),
-        0px 2px 1px rgba(46, 47, 66, 0.08);
+
+/*--Описываем ссылку на иконку Заказчика--*/
+.customer-link
+{
+ width: calc((100% - 5824px)/6);
+ width: 168px; 
+ height: 88px;
+ background-color: #FFFFFF;}
+
 }
 
-/*--Делаем ховер и фокус на всю карточку (текст выезжает снизу)--*/
-.pf-link:hover .text-overlay,
-.pf-link:focus .text-overlay 
-{ transform: translateY(0);}
 
-/*--Описываем класс родителя текста оверлея--*/
-.card-overlay
-{position: relative;
- overflow: hidden;
- }
+/*-------------FOOTER---------------*/
 
-/*--Описываем текст оверлей--*/
-.text-overlay
-{position: absolute;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-overflow: auto;
-transform: translateY(100%);
-background-color: #4D5AE5;
-transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-color: #F4F4FD;
-font-weight: 400;
-font-size: 16px;
-line-height: 1.5;
-letter-spacing: 0.02em;
-padding: 40px 32px;
-}
+/*---------МОБИЛЬНАЯ ВЕРСИЯ---------*/
+
 
 /*--Данные Футера--*/
 .footer {
 background-color: var(--footer-background-color);
-padding: 100px 0;
+padding: 96px 0;
 margin-left: auto;
 margin-right: auto;
 }
 
-/*--Ставим по горизонтали левый и рпавый блок футера--*/
+
+/*--Ставим по горизонтали левый и правый блок футера--*/
 .foot-content
 {display: flex;
-align-items: baseline;}
+ flex-direction: column;   
+ align-items: center;
+}
+
+
+/*--Дополнительный контейнер для планшетной версии--*/
+.logo-sl-foot
+{ 
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+
+/*--Контейнер логотип + текст--*/
+.logo-text-footer
+{
+display: flex;
+flex-direction: column;
+align-items: center;
+margin-bottom: 72px;
+}
+
 
 /*--Дополнительные данные нижнего логотипа--*/
-.foot {
+.foot 
+{ 
 display: inline-block;
 margin-bottom: 16px;
 }
 
-/*--Контейнер логотип + текст--*/
-.logo-text-footer
-{margin-right: 120px;}
-
+/*--Описываем слово-ссылку WEB--*/
 .footer-word
 {color: var(--footer-main-text-color);
 font-family: 'Raleway';
@@ -596,6 +1163,7 @@ letter-spacing: 0.03em;
 text-transform: uppercase;
 }
 
+/*--Описываем текст футера--*/
 .footer-text {
 color: var(--footer-main-text-color);
 font-weight: 400;
@@ -617,15 +1185,18 @@ font-size: 16px;
 line-height: 1.5;
 letter-spacing: 0.02em;
 margin-bottom: 16px;
+text-align: center;
 }
+
 
 /*--Контейнер 4-х ячеек с иконками соцсетей--*/
 .section-social-ul-footer 
 {display: flex;
  gap: 16px; }
 
+
  /*--Описание класса ссылки соцсетей футера--*/
- .social-link-a-foot {
+.social-link-a-foot {
      display: flex;
      width: 100%;
      height: 100%;
@@ -637,24 +1208,22 @@ margin-bottom: 16px;
      transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     }
 
- /*--Меняем цвет при наведении на ссылку футера--*/
- .social-link-a-foot:hover,
- .social-link-a-foot:focus {
-     background-color: #31D0AA;
-    }
+
+/*--Меняем цвет при наведении на ссылку футера--*/
+.social-link-a-foot:hover,
+.social-link-a-foot:focus 
+{ background-color: #31D0AA; }
+
 
  /*--Класс для заливки иконок соцсетей футера--*/
- .icon-sl-foot {
+.icon-sl-foot {
   fill: #f4f4fd; }
 
 
-/*----------------ДЗ-6-------------------*/
-
 /*--Контейнер с формой--*/
 .cont-subscribe
-{margin-left: 80px; /*--Отодвигаем на 80px--*/
- /*--outline: 1px solid red;--*/
-}
+{margin-top: 72px;} /*--Отодвигаем на 72px вниз--*/
+
 
 /*--Описание текста над формой--*/
 .text-form
@@ -666,22 +1235,26 @@ font-size: 16px;
 line-height: 1.5;
 letter-spacing: 0.02em;
 margin-bottom: 16px;
+text-align: center;
 }
 
 /*--Описание контейнера для формы Subscribe--*/
 .form-subscribe 
-{ display: flex; }
+{ display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 
 /*--Описание <label>, в которую вложен "p + input"--*/
 .label-subscribe 
-{ margin-right: 24px; }
+{ margin-bottom: 16px; }
 
 
 /*--Описание <input> внутри формы--*/
 .cont-subscribe input
 {
-    width: 264px;
+    width: 398px;
     height: 40px;
     background-color: var(--footer-background-color);
     border: 1px solid white;
@@ -697,11 +1270,11 @@ margin-bottom: 16px;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
 }
 
+
 /*--Описываем поведение <input> при фокусе--*/
 .cont-subscribe-input:focus
-{ 
-outline: transparent; /*--Убираем черную рамку от браузера--*/
-}
+{ outline: transparent; } /*--Убираем черную рамку от браузера--*/
+
 
 /*--Задаем параметры текста placeholder формы Subscribe в футере--*/
 .cont-subscribe-input::placeholder
@@ -715,13 +1288,12 @@ outline: transparent; /*--Убираем черную рамку от брауз
 /*--Описание кнопки формы Subscribe--*/
 .form-btn
 {
-min-width: 165px;
+width: 165px;
 height: 40px;
 border-radius: 4px;
 display: flex;
 align-items: center;
 justify-content: center; 
-
 background-color: #4D5AE5;
 color: #fff;
 font-weight: 500;
@@ -733,18 +1305,119 @@ cursor: pointer;
 transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/*--Меняем кнопку при ховере и фокусе--*/
-/*--.form-btn:hover, .form-btn:focus
-{ background-color: #404BBf; }--*/
+
+/*--Меняем кнопку при фокусе--*/
+.form-btn:hover,
+.form-btn:focus
+{ background-color: #404BBf; }
 
 
 /*--Класс описания иконки кнопки Subscribe--*/
 .icon-subscribe-foot 
-{fill: #f4f4fd;
+{fill: #f4f4fd ;
 margin-left: 16px; }
 
 
-/*--Описание бекдропа--*/
+
+/*------------ПЛАНШЕТНАЯ ВЕРСИЯ ФУТЕРА-----------*/
+
+@media screen and (min-width: 768px)
+
+{
+
+/*--Данные Футера--*/
+.footer {
+padding: 96px 0;
+}
+
+
+/*--Описываем планшетную версию--*/
+.foot-content
+{ padding-left: 92px;
+  align-items: flex-start; }
+
+
+/*--Описываем дополнительный класс logo+SL--*/
+.logo-sl-foot
+{
+ flex-direction: row;
+ align-items: baseline;
+ }
+
+
+/*--Контейнер логотип + текст-обнуляем нижний отступ от мобайл-*/
+.logo-text-footer
+{margin-bottom: 0;
+ margin-right: 24px;
+ align-items: flex-start;
+}
+
+
+/*--Текст Social media в футере--*/
+.footer-text-title
+{text-align: start;
+}
+
+
+/*--Описание текста над формой--*/
+.text-form
+{ text-align: start;}
+
+
+/*--Описание контейнера для формы Subscribe--*/
+.form-subscribe 
+{ display: flex;
+flex-direction: row;
+align-items: baseline; }
+
+
+/*--Описание <label>, в которую вложен "p + input"--*/
+.label-subscribe 
+{ margin-right: 24px; }
+
+
+/*--Описание <input> внутри формы--*/
+.cont-subscribe input
+{   width: 264px;  }
+
+
+}
+
+/*---------------ДЕСКТОПНАЯ-ВЕРСИЯ-ФУТЕРА--------------*/
+
+@media screen and (min-width: 1158px) {
+  
+
+/*--Указываем отступы для десктопа--*/
+.footer {
+padding: 100px 0;
+}
+
+/*--Ставим по горизонтали левый и правый блок футера--*/
+.foot-content
+{display: flex;
+ flex-direction: row; 
+align-items: baseline;
+padding-left: 15px;}
+
+
+/*--Контейнер логотип + текст--*/
+.logo-text-footer
+{margin-right: 120px;}
+
+ 
+/*--Контейнер с формой--*/
+.cont-subscribe
+{ margin-top: 0px;
+  margin-left: 80px;} /*--Отодвигаем на 80px--*/
+
+}
+
+
+/*--------------------BACK-DROP-----------------------*/
+
+/*----------МОБИЛЬНАЯ ВЕРСИЯ----------*/
+
 .backdrop
 {
  position: fixed;
@@ -767,8 +1440,8 @@ margin-left: 16px; }
 
 /*--Описание модального окна--*/
 .modal-window
-{width: 408px;
- min-height: 576px;
+{width: 392px;
+ height: 584px;
  background-color: #FCFCFC;
  position: absolute;
  top: 50%;
@@ -780,8 +1453,8 @@ margin-left: 16px; }
  border-radius: 4px;       
  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
  
- padding-left: 24px;
- padding-right: 24px;
+ padding-left: 16px;
+ padding-right: 16px;
  padding-top: 72px;
  padding-bottom:24px;
  }
@@ -806,6 +1479,7 @@ transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
             border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+
 /*--Поведение кнопки закрытия модального окна при ховере, фокусе--*/
 .modal-close-btn:hover,
 .modal-close-btn:focus
@@ -813,10 +1487,12 @@ transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
  border: none;
 }
 
+
 /*-Описание иконки закрытия модального окна-*/
 .modal-close-btn-icon
 {fill: #2E2F42;
 transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);}
+
 
 /*--Меняем цвет иконки при ховере/фокусе модальной кнопки закрытия--*/
 .modal-close-btn:hover .modal-close-btn-icon,
@@ -998,3 +1674,20 @@ transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 { background-color: #404BBf;}
 
 
+/*----------------ПЛАНШЕТНАЯ ВЕРСИЯ-----------------*/
+
+@media screen AND (min-width: 768px) {
+
+/*--Описание модального окна--*/
+  .modal-window 
+  {
+  width: 408px;
+  padding-left: 24px;
+  padding-right: 24px;
+  }
+
+}
+
+/*------------------ДЕСКТОПНАЯ ВЕРСИЯ-----------------*/
+
+/*--НОВЫХ УСЛОВИЙ для ДЕСКТОПНОЙ ВЕРСИИ НЕТ--*/
