@@ -156,12 +156,14 @@ height: auto;}
 /*--Контейнер мобильного меню--*/
 .mobile-menu-container
 {
+ display: flex;
+ flex-direction: column;
+ justify-content: space-between;
  position: relative;
  width: 100%;
  height: 100%;
  padding-top: 80px;
  padding-left: 40px;
- padding-right: 35px;
  padding-bottom: 40px;
  }
 
@@ -196,6 +198,7 @@ height: auto;}
  padding:0;
  gap: 40px;
  margin-bottom: 284px;
+ outline: 1px solid red;
 }
 
 
@@ -438,6 +441,7 @@ color: var(--link-active-color);
 /*--Прижимаем секцию почты и телефона к правому краю--*/
 .cont
 { margin-left: auto;}
+
 
 /*--Делаем список контактов flex-контейнером--*/
 .cont-ul 
@@ -976,13 +980,6 @@ flex-basis: calc((100% - 1*24px)/2);}
 {margin-bottom:72px;}
 
 
-/*--Задаем паддинги--*/
-.section-customers-content
-{/*--padding-left: 16px;
- padding-right: 16px;--*/
-}
-
-
 /*--Описываем контейнер--*/
 .section-customers-ul {
 display: flex;
@@ -1118,8 +1115,7 @@ margin-right: auto;
 {display: flex;
  flex-direction: column;   
  align-items: center;
- outline: 1px solid green;
-}
+ }
 
 
 /*--Дополнительный контейнер для планшетной версии--*/
@@ -1328,7 +1324,8 @@ padding: 96px 0;
 /*--Описываем планшетную версию--*/
 .foot-content
 { padding-left: 92px;
-  align-items: flex-start; }
+  align-items: flex-start;
+}
 
 
 /*--Описываем дополнительный класс logo+SL--*/
