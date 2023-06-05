@@ -157,6 +157,7 @@ height: auto;}
 .mobile-menu-container
 {
  display: flex;
+ height: 100%;
  flex-direction: column;
  justify-content: space-between;
  position: relative;
@@ -194,11 +195,9 @@ height: auto;}
 /*--Мобильное меню навигации--*/
 .mobile-menu-nav
 {display: flex;
- flex-direction: column;   
- padding:0;
+ flex-direction: column;  
+ padding: 0;
  gap: 40px;
- /*--margin-bottom: 284px;--*/
- outline: 1px solid blue;
  }
 
 
@@ -208,7 +207,7 @@ height: auto;}
  font-size: 36px;
  line-height: 1.11;
  letter-spacing: 0.02em;
-  text-decoration: none;    }
+ text-decoration: none;}
 
 
 /*--Задаем цвет главной ссылке мобильного меню--*/
@@ -227,21 +226,17 @@ height: auto;}
  { color: #404bbf; }
 
 
+/*----*/ 
 .mobile-cont-sl
 { display: flex;
-  flex-direction: column;
-  outline: 1px solid red;
-}
-
-
+  flex-direction: column; }
 
 
 /*--Мобильное меню контакты--*/
 .mobile-menu-cont
 {display: flex;
  flex-direction: column;   
- gap: 40px;
- }
+ gap: 40px; }
 
 
  /*--Задаем цвет ссылке телефона--*/
@@ -265,8 +260,8 @@ height: auto;}
 {display: flex;
  margin-top: 48px;
  max-width: 328px;
- justify-content: space-between; 
-}
+ justify-content: space-between;
+ }
 
 
 /*--Ячейка каждой иконки линка соцсети--*/
