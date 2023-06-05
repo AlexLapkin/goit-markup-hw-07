@@ -688,9 +688,9 @@ letter-spacing: 0.02em;
 }
 
 /*--Скрываем ненужные иконки в мобильной версии--*/
-.icon-adv {
-    display: none;
-}
+.icon-adv 
+{ display: none; }
+
 
 /*-----------------ПЛАНШЕТНАЯ ВЕРСИЯ----------------------*/
 
@@ -701,13 +701,11 @@ letter-spacing: 0.02em;
 /*--Делаем список flex-элементом, чтобы список 
     расположить в несколько рядов--*/
 .section-ul
-{/*--display: flex;--*/
+{
 flex-direction: row;
  flex-wrap: wrap;
  column-gap: 24px;
  row-gap: 72px;
- padding-left: 0;
- padding-right: 0; 
  }
 
 
@@ -764,8 +762,7 @@ border-radius: 4px;
     font-size: 20px;
     line-height: 1.2;
     letter-spacing: 0.02em;
-    /*--margin-bottom: 8px;--*/
-}
+    }
 
 
 /*--Данные текста секции--*/
@@ -820,14 +817,6 @@ padding: 96px 0;
 }
 
 
-/*--Задаем внутренние отступы--*/
-.section-team-content
-{
- /*--padding-left: 82px;
- padding-right: 82px;--*/
-}
-
-
 /*--Задаем внутренние отступы и располагаем вертикально--*/
 .section-ul-team
 {
@@ -849,9 +838,7 @@ box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
 
 /*--Создание контейнера - имя, должность членов команды--*/
 .name-job
-{ /*--max-width: 232px;--*/    
-  padding: 32px 0;
-  } /*--внутренние отступы контейнера--*/
+{ padding: 32px 0; } /*--внутренние отступы контейнера--*/
 
 
 /*--Данные подзаголовков--*/
@@ -860,7 +847,6 @@ font-weight: 500;
 font-size: 20px;
 line-height: 1.2;
 letter-spacing: 0.02em;
-/*--margin-bottom: 8px;--*/
 }
 
 
@@ -924,6 +910,7 @@ background-color: #404bbf;
 .section-team-content {
   padding-left: 108px;
   padding-right: 108px;
+  
 }
 
 
@@ -937,6 +924,7 @@ background-color: #404bbf;
     row-gap: 64px;   }
 
 
+/*--Считаем ширину карточки сотрудника--*/
 .section-team-card {
 flex-basis: calc((100% - 1*24px)/2);}
 
@@ -971,8 +959,6 @@ flex-basis: calc((100% - 1*24px)/2);}
 
 /*---------------МОБИЛЬНАЯ ВЕРСИЯ---------------*/
 
-/*--@media screen and (max-width: 767px)
-{
 
 /*--Задаем внутренние паддинги секции закачиков--*/
 .section-customers
@@ -990,7 +976,8 @@ flex-basis: calc((100% - 1*24px)/2);}
  padding-right: 16px;--*/
 }
 
-/*--*/
+
+/*--Описываем контейнер--*/
 .section-customers-ul {
 display: flex;
 flex-direction: row;
@@ -1230,7 +1217,6 @@ text-align: center;
 /*--Описание текста над формой--*/
 .text-form
 {
-/*--display: block;--*/
 color: var(--footer-secondary-text-color);
 font-weight: 500;
 font-size: 16px;
@@ -1256,7 +1242,7 @@ text-align: center;
 /*--Описание <input> внутри формы--*/
 .cont-subscribe input
 {
-    width: 398px;
+    max-width: 398px;
     height: 40px;
     background-color: var(--footer-background-color);
     border: 1px solid white;
@@ -1380,7 +1366,7 @@ align-items: baseline; }
 
 /*--Описание <input> внутри формы--*/
 .cont-subscribe input
-{   width: 264px;  }
+{ max-width: 264px;  }
 
 
 }
