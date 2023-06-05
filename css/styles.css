@@ -1435,7 +1435,7 @@ padding-left: 15px;}
 
 /*--Описание модального окна--*/
 .modal-window
-{width: 392px;
+{max-width: 392px;
  height: 584px;
  background-color: #FCFCFC;
  position: absolute;
@@ -1676,7 +1676,7 @@ transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 /*--Описание модального окна--*/
   .modal-window 
   {
-  width: 408px;
+  max-width: 408px;
   padding-left: 24px;
   padding-right: 24px;
   }
