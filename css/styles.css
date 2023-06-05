@@ -822,8 +822,8 @@ padding: 96px 0;
 /*--Задаем внутренние отступы--*/
 .section-team-content
 {
- padding-left: 82px;
- padding-right: 82px;
+ /*--padding-left: 82px;
+ padding-right: 82px;--*/
 }
 
 
@@ -833,6 +833,7 @@ padding: 96px 0;
  display: flex;
  flex-direction: column;
  row-gap: 72px;
+ align-items: center;
  }
 
 .section-team-card {
@@ -984,8 +985,8 @@ flex-basis: calc((100% - 1*24px)/2);}
 
 /*--Задаем паддинги--*/
 .section-customers-content
-{padding-left: 16px;
- padding-right: 16px;
+{/*--padding-left: 16px;
+ padding-right: 16px;--*/
 }
 
 /*--*/
