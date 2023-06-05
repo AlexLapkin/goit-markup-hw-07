@@ -198,8 +198,7 @@ height: auto;}
  padding:0;
  gap: 40px;
  margin-bottom: 284px;
- outline: 1px solid red;
-}
+ }
 
 
 /*--Описываем линки навигации мобильного меню--*/
@@ -225,6 +224,16 @@ height: auto;}
  /*--Описываем поведение ссылок при фокусе--*/
  .mobile-menu-link:focus
  { color: #404bbf; }
+
+
+.mobile-cont-sl
+{ display: flex;
+  flex-direction: column;
+
+
+}
+
+
 
 
 /*--Мобильное меню контакты--*/
