@@ -195,9 +195,12 @@ height: auto;}
 .mobile-menu-nav
 {display: flex;
  flex-direction: column;   
+ justify-content: space-between;
  padding:0;
- gap: 40px;
+ height: 200px;
+ /*--gap: 40px;--*/
  /*--margin-bottom: 284px;--*/
+ outline: 1px solid blue;
  }
 
 
@@ -229,8 +232,9 @@ height: auto;}
 .mobile-cont-sl
 { display: flex;
   flex-direction: column;
-
-
+  justify-content: space-between;
+  height: 192px;
+  outline: 1px solid red;
 }
 
 
@@ -241,7 +245,7 @@ height: auto;}
 {display: flex;
  flex-direction: column;   
  gap: 40px;
- margin-bottom: 48px;
+ /*--margin-bottom: 48px;--*/
 }
 
 
