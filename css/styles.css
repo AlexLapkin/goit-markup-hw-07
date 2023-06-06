@@ -1434,19 +1434,27 @@ padding-left: 15px;}
 }
 
 
-/*--Уменьшаем ширину модального окна при вьюпорте меньше 428рх--*/
-@media screen and (max-midth: 427px) {
+/*--Меняем размеры модального окна при вьюпорте 
+    меньше 428рх для нормального отображения--*/
+@media screen and (max-width: 427px) {
   .modal-window {
     width: 320px;
+    height: 625px;
   }
 }
 
 
+/*--Меняем размеры модального окна при вьюпорте 
+    больше 428рх для нормального отображения--*/
+@media screen and (min-width: 428px) {
+.modal-window {
+    width: 392px;
+    height: 584px;}}
+
 
 /*--Описание модального окна--*/
 .modal-window
-{width: 392px;
- height: 584px;
+{
  background-color: #FCFCFC;
  position: absolute;
  top: 50%;
@@ -1457,18 +1465,12 @@ padding-left: 15px;}
         0px 2px 1px rgba(0, 0, 0, 0.2);
  border-radius: 4px;       
  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
- 
  padding-left: 16px;
  padding-right: 16px;
  padding-top: 72px;
  padding-bottom:24px;
+ outline: 1px solid red;
  }
-
-
-
-
-
-
 
 
 /*--Описание кнопки закрытия модального окна--*/
@@ -1665,8 +1667,9 @@ transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
  border: none;
  cursor: pointer; 
  min-width: 169px;
- height: 56px;
- margin: auto;
+ min-height: 56px;
+ margin-left: auto;
+ margin-right: auto;
  
 background-color: var(--btn-color);
 box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
@@ -1688,7 +1691,7 @@ transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
 /*----------------ПЛАНШЕТНАЯ ВЕРСИЯ-----------------*/
 
-@media screen AND (min-width: 768px) {
+@media screen and (min-width: 768px) {
 
 /*--Описание модального окна--*/
   .modal-window 
