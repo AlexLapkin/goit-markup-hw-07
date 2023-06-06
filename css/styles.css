@@ -1246,10 +1246,21 @@ text-align: center;
 { margin-bottom: 16px; }
 
 
+@media screen and (max-width: 427px) {
+  .cont-subscribe-input
+  {width: 310px;}
+}
+
+@media screen and (min-width: 428px) {
+  .cont-subscribe-input {
+    width: 395px;
+  }
+}
+
+
 /*--Описание <input> внутри формы--*/
 .cont-subscribe-input
 {
-    width: 395px;
     height: 40px;
     background-color: var(--footer-background-color);
     border: 1px solid white;
@@ -1438,7 +1449,7 @@ padding-left: 15px;}
     меньше 428рх для нормального отображения--*/
 @media screen and (max-width: 427px) {
   .modal-window {
-    width: 320px;
+    width: 310px;
     height: 625px;
   }
 }
@@ -1469,7 +1480,6 @@ padding-left: 15px;}
  padding-right: 16px;
  padding-top: 72px;
  padding-bottom:24px;
- outline: 1px solid red;
  }
 
 
