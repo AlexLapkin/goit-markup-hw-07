@@ -1647,7 +1647,7 @@ transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
  }
 
 
-
+/*--Задаем условия для разной ширины--*/
 @media screen and (max-width: 427px)
 {
   /*--Уменьшаем шрифт <label> checkbox--*/
@@ -1711,17 +1711,10 @@ margin-left: 4px;
 }  
 
 
-
-
-
-
 /*--Описываем дополнительный span--*/
 .modal-win-add-span
 { display: inline-flex; }
  
-
-
-
 
 /*--Кнопка Send модального окна--*/
 .modal-btn
