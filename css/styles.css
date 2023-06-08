@@ -594,6 +594,11 @@ margin-left: auto;
 margin-right: auto;
 }
     
+
+/*--Задаем верхний отступ от кнопки--*/
+.main-btn 
+{ margin-top: 36px; }
+
 }
 
 /*---------------------ДЕСКТОПНАЯ ВЕРСИЯ---------------------*/
@@ -627,6 +632,12 @@ background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
               url(../images/hero/Hero_desktop_2x.jpg);
       }
 }
+
+/*--Задаем верхний отступ от кнопки--*/
+.main-btn {
+ margin-top: 48px;
+}
+
 }
 
 
@@ -777,7 +788,7 @@ border-radius: 4px;
     letter-spacing: 0.02em;
     }
 
-
+  
 /*--Данные текста секции--*/
 .section-text {
 font-weight: 400;
@@ -839,6 +850,7 @@ padding: 96px 0;
  align-items: center;
  }
 
+ /*---Описание карточки сотрудника-*/
 .section-team-card {
 background-color: var(--main-background-color);
 text-align: center;
@@ -854,24 +866,24 @@ box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
 { padding: 32px 0; } /*--внутренние отступы контейнера--*/
 
 
-/*--Данные подзаголовков--*/
+/*--Данные подзаголовков членов команды--*/
 .section-subtitle-team {
 font-weight: 500;
 font-size: 20px;
 line-height: 1.2;
 letter-spacing: 0.02em;
+text-align: center;
+margin-bottom: 8px;
 }
 
 
-/*--Задание параметров ФИ сотрудника--*/
-.name-job .section-subtitle-team
-{text-align: center;
- margin-bottom: 8px;}
-
 /*--Задание параметров должности сотрудника--*/
 .name-job .section-text 
-{text-align: center;
-margin-bottom: 8px}
+{
+ font-weight: 400;
+ text-align: center;
+ margin-bottom: 8px;
+}
 
 
 /*--Контейнер 4-х ячеек с иконками соцсетей--*/
@@ -920,11 +932,8 @@ background-color: #404bbf;
 {
 
 /*--Задаем внутренние паддинги--*/    
-.section-team-content {
-  padding-left: 108px;
-  padding-right: 108px;
-  
-}
+.section-team-content 
+{ width: 584px; }
 
 
 /*--Задаем внутренние отступы и располагаем вертикально--*/
@@ -956,9 +965,7 @@ flex-basis: calc((100% - 1*24px)/2);}
 
 /*--Задаем паддинги--*/
 .section-team-content
-{ padding-left: 16px;
-  padding-right: 16px;
-}
+{ width: 1158px; }
 
 
 .section-team-card {
@@ -973,7 +980,7 @@ flex-basis: calc((100% - 1*24px)/2);}
 /*---------------МОБИЛЬНАЯ ВЕРСИЯ---------------*/
 
 
-/*--Задаем внутренние паддинги секции закачиков--*/
+/*--Задаем внутренние паддинги секции заказчиков--*/
 .section-customers
 {padding: 96px 0;}
 
@@ -1044,11 +1051,10 @@ fill: #8E8F99;
      
 /*--Задаем паддинги--*/
 .section-customers-content {
-  padding-left: 108px;
-  padding-right: 108px;
+  width: 584px;
 }
 
-/*----*/
+/*--Описываем секцию--*/
 .section-customers-ul {
     display: flex;
     flex-direction: row;
@@ -1082,8 +1088,7 @@ fill: #8E8F99;
 
 /*--Задаем паддинги--*/
 .section-customers-content {
-  padding-left: 15px;
-  padding-right: 15px;
+  width: 1158px;
 }
 
 
@@ -1336,7 +1341,7 @@ padding: 96px 0;
 
 /*--Описываем планшетную версию--*/
 .foot-content
-{ padding-left: 92px;
+{ width: 584px;
   align-items: flex-start;
 }
 
@@ -1399,9 +1404,10 @@ padding: 100px 0;
 /*--Ставим по горизонтали левый и правый блок футера--*/
 .foot-content
 {display: flex;
- flex-direction: row; 
+ flex-direction: row;
+ width: 1158px; 
 align-items: baseline;
-padding-left: 15px;}
+}
 
 
 /*--Контейнер логотип + текст--*/
@@ -1624,19 +1630,57 @@ transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
  letter-spacing: 0.04em;  
  color: #8E8F99; }
 
+
+ 
 /*--Задаем отступ вниз от checkbox до кнопки--*/
 .modal-win-checkbox
 {margin-bottom: 24px; }
 
-/*--Описание <label> checkbox--*/
-.modal-win-label-checkbox
+
+@media screen and (max-width: 427px)
 {
+  /*--Описание <label> checkbox--*/
+ .modal-win-label-checkbox
+  {
+ display: flex;
  font-weight: 400;
- font-size: 12px;
+ font-size: 10px;
  line-height: 1.17;
  letter-spacing: 0.04em;
  color: #8E8F99;
- }
+ margin-left: 3px;
+  }
+
+  .modal-win-span 
+  { margin-right: 4px; }
+
+/*--Описание ссылки Privacy Policy--*/
+.modal-win-checkbox-link 
+{ margin-left: 2px; }
+
+}
+
+@media screen and (min-width: 428px)
+{
+.modal-win-label-checkbox 
+  { font-size: 12px; }
+
+
+.modal-win-span {
+  margin-right: 8px;
+}
+
+/*--Описание ссылки Privacy Policy--*/
+.modal-win-checkbox-link {
+margin-left: 4px;
+}
+
+}
+
+/*--Описание ссылки Privacy Policy--*/
+.modal-win-checkbox-link 
+{ color: var(--logo-check-color); }
+
 
 /*--Описание span с вложенной svg-иконкой--*/
 .modal-win-span
@@ -1648,7 +1692,7 @@ transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
  height: 16px;
  border: 1px solid rgba(46, 47, 66, 0.2);
  border-radius: 2px;
- margin-right: 8px;
+ /*--margin-right: 8px;---*/
  fill: transparent;  
 }
 
@@ -1663,9 +1707,18 @@ transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
  border-color: #404bbf;    
 }  
 
-/*--Описание ссылки Privacy Policy--*/
-.modal-win-checkbox-link
-{color: var(--logo-check-color); }
+
+
+
+
+
+/*--Описываем дополнительный span--*/
+.modal-win-add-span
+{ display: inline-flex; }
+ 
+
+
+
 
 /*--Кнопка Send модального окна--*/
 .modal-btn
@@ -1713,3 +1766,149 @@ transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 /*------------------ДЕСКТОПНАЯ ВЕРСИЯ-----------------*/
 
 /*--НОВЫХ УСЛОВИЙ для ДЕСКТОПНОЙ ВЕРСИИ НЕТ--*/
+
+
+/*-----------------------------------------------------*/
+
+
+
+/*--------------ДЕСКТОПНАЯ ВЕРСИЯ PORTFOLIO-------------*/
+
+
+/*--Описываем ссылку текущей страницы Портфолио--*/
+.current-page-port {
+  position: relative;
+  color: var(--link-active-color);
+}
+
+/*--Делаем подчеркивание страницы Портфолио псевдоэлементом--*/
+.current-page-port::after {
+  content: '';
+  /*--display: block;--*/
+  width: 66px;
+  height: 4px;
+  border-radius: 2px;
+  background-color: #404BBF;
+  margin: auto;
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+}
+
+/*--Задание паддингов для секции Портфолио--*/
+.section-port {
+  padding-top: 96px;
+  padding-bottom: 120px;
+}
+
+/*--Делаем список кнопок горизонтальным flex-элементом--*/
+.section-ul-button {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 72px;
+  justify-content: center;
+}
+
+/*---Кнопки Портфолио---*/
+.btn {
+  color: var(--btn-color);
+  background-color: #F4F4FD;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  border: 1px solid var(--border-btn-color);
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 12px 24px 12px 24px;
+  display: block;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/*--Меняем цвет кнопок Портфолио при наведении--*/
+.btn:hover,
+.btn:focus {
+  color: var(--main-btn-color);
+  background-color: #404BBF;
+  border: 1px solid transparent;
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1),
+    0px 2px 1px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
+}
+
+/*--Делаем список flex-элементом, чтобы список расположить горизонтально
+    в несколько рядов--*/
+.section-ul-card {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 24px;
+  row-gap: 48px;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/*--Описываем каждый элемент списка--*/
+.section-item-card {
+  flex-basis: calc((100% - 2*24px)/3);
+}
+
+/*--Создание контейнера - описание карточки портфолио--*/
+.img-title {
+  padding: 32px 16px;
+  /*--внутренние отступы контейнера--*/
+  border: 1px solid #e7e9fc;
+  border-top: none;
+}
+
+/*--Задание отступа подзаголовку img Portfolio--*/
+.img-title .section-subtitle {
+  margin-bottom: 8px;
+}
+
+/*--Делаем ссылку блочным элементом--*/
+.pf-link {
+  display: block;
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/*--Эффект тени при наведении на карточку Портфолио--*/
+.pf-link:hover,
+.pf-link:focus {
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16),
+    0px 2px 1px rgba(46, 47, 66, 0.08);
+}
+
+/*--Делаем ховер и фокус на всю карточку (текст выезжает снизу)--*/
+.pf-link:hover .text-overlay,
+.pf-link:focus .text-overlay {
+  transform: translateY(0);
+}
+
+/*--Описываем класс родителя текста оверлея--*/
+.card-overlay {
+  position: relative;
+  overflow: hidden;
+}
+
+/*--Описываем текст оверлей--*/
+.text-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  transform: translateY(100%);
+  background-color: #4D5AE5;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  color: #F4F4FD;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  padding: 40px 32px;
+}
