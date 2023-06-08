@@ -1637,24 +1637,28 @@ transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 {margin-bottom: 24px; }
 
 
+/*--Описание <label> checkbox--*/
+.modal-win-label-checkbox {
+  display: flex;
+  font-weight: 400;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  color: #8E8F99;
+ }
+
+
+
 @media screen and (max-width: 427px)
 {
-  /*--Описание <label> checkbox--*/
+  /*--Уменьшаем шрифт <label> checkbox--*/
  .modal-win-label-checkbox
-  {
- display: flex;
- font-weight: 400;
- font-size: 9px;
- line-height: 1.17;
- letter-spacing: 0.04em;
- color: #8E8F99;
- margin-left: 2px;
-  }
+  { font-size: 10px;  }
 
+  /*--Задаем уменьшенный отступ--*/
   .modal-win-span 
   { margin-right: 4px; }
 
-/*--Описание ссылки Privacy Policy--*/
+/*--Отступ ссылки Privacy Policy--*/
 .modal-win-checkbox-link 
 { margin-left: 2px; }
 
@@ -1670,14 +1674,13 @@ transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   margin-right: 8px;
 }
 
-/*--Описание ссылки Privacy Policy--*/
+/*--Отступ ссылки Privacy Policy--*/
 .modal-win-checkbox-link {
 margin-left: 4px;
 }
-
 }
 
-/*--Описание ссылки Privacy Policy--*/
+/*--Задаем цвет ссылки Privacy Policy--*/
 .modal-win-checkbox-link 
 { color: var(--logo-check-color); }
 
